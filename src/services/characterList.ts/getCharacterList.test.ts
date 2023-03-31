@@ -7,13 +7,13 @@ import { getCharacterList } from './getCharacterList';
 
 jest.mock('api/request');
 
-describe('getCharacterList', async () => {
+describe('getCharacterList', () => {
   const setUpSuccess = () => {
     const params = makeParams;
     const characterListResponse = makeCharacterListResponse();
     mockRequest({ body: characterListResponse, status: HttpStatusCodes.ok });
 
-    return { params };
+    return { params, characterListResponse };
   };
 
   const setUpToThrow = () => {
@@ -29,11 +29,6 @@ describe('getCharacterList', async () => {
     page: 2
   };
 
-  const mockResponse = {
-    status: 200,
-    body: [{ id: 1, name: 'Character 1' }, { id: 2, name: 'Character 2' }]
-  };
-
   it('should call the request function with the correct params', async () => {
     const { params } = setUpSuccess();
 
@@ -47,10 +42,10 @@ describe('getCharacterList', async () => {
   });
 
   it('should return the response body', async () => {
-    const { params } = setUpSuccess();
+    const { params, characterListResponse } = setUpSuccess();
     const result = await getCharacterList(params);
 
-    expect(result).toEqual(mockResponse.body);
+    expect(result).toEqual(characterListResponse);
   });
 
 

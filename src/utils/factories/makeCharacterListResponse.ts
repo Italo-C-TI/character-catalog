@@ -1,5 +1,5 @@
 import { Character, GenderCharacterEnum, Paginated, StatusCharacterEnum } from 'models';
-import { random } from 'utils';
+import { random } from 'utils'
 import { makeList } from './makeList';
 import { makePagination } from './makePagination';
 
