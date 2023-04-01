@@ -1,1 +1,1 @@
-export * from './useGetAreas';
+export * from './useGetCharacterList';
