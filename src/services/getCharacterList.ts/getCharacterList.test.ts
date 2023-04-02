@@ -36,7 +36,7 @@ describe('getCharacterList', () => {
 
     expect(request).toHaveBeenCalledWith({
       url: Endpoints.character.list,
-      method: HttpMethods.Get,
+      method: HttpMethods.GET,
       params: params
     })
   });

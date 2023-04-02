@@ -1,11 +1,15 @@
 import React from "react";
 import * as Styled from "./Loading.styles";
 import { LoadingProps } from "./Loading.types";
+import { useIsRequesting } from "hooks";
 
 export const Loading = ({ isLoading }: LoadingProps) => {
+  const { isRequesting } = useIsRequesting();
+
+  const loading = isRequesting || isLoading;
   return (
     <>
-      {isLoading && (
+      {loading && (
         <Styled.Container>
           <Styled.Spinner viewBox="0 0 50 50">
             <circle

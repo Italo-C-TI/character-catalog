@@ -46,3 +46,7 @@ export enum StatusCharacterEnum {
 }
 
 type StatusCharacter = keyof typeof StatusCharacterEnum;
+
+export interface ICharacterLikeId {
+    id: number;
+}

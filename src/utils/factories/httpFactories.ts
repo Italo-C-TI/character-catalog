@@ -10,7 +10,7 @@ export function makeBody<T>(body: T = {} as any) {
 
 export function makeHttpRequest(request: Partial<HttpRequest> = {}): HttpRequest {
     return {
-        method: HttpMethods.Get,
+        method: HttpMethods.GET,
         url: 'any-url',
         body: makeBody(),
         ...request,

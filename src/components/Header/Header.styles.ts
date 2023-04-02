@@ -11,7 +11,17 @@ const headerVariant = {
     },
 };
 
+const spanVariant = {
+    open: {
+        display: 'flex'
+    },
+    default: {
+        display: 'none',
+    },
+};
+
 export const Header = styled.header<HeaderProps>`	
+    position: fixed;
     display: flex;
     flex-direction: column;
     background-color:${theme.colors.grayDark};;
@@ -19,7 +29,6 @@ export const Header = styled.header<HeaderProps>`
     justify-content: space-between;
     z-index:  ${theme.zIndex.header};
     transition: ease-out 300ms;
-    margin-right: ${theme.space.regular};
     ${({ variant }) => headerVariant[variant]};
 `;
 
@@ -35,8 +44,16 @@ export const RowIconWithText = styled.div`
     height: 80px;
 `;
 
-export const IconText = styled.span`
+export const IconText = styled.span<HeaderProps>`
     margin-left: ${theme.space.larger};
     color: ${theme.colors.white};
     cursor: pointer;
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+    animation: fadeIn 1.5s;
+    
+    ${({ variant }) => spanVariant[variant]};
 `;

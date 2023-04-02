@@ -1,20 +1,26 @@
-import { CharacterCardList, Header, Loading } from "components";
+import { CharacterCardList } from "components";
 import { useGetCharacterList } from "hooks";
-import react from "react";
+import react, { useEffect, useState } from "react";
 
 import * as Styled from "./Home.styles";
+import { Character } from "models";
 
 export const Home = () => {
-  const { characterList, isLoading } = useGetCharacterList();
+  const { characterList, isSuccess } = useGetCharacterList();
 
-  console.log(characterList);
+  const [characteres, setCharacteres] = useState<Character[]>(
+    characterList?.results || []
+  );
+
+  useEffect(() => {
+    if (characterList) setCharacteres(characterList.results);
+  }, [characterList]);
 
   return (
     <Styled.Container>
-      <Loading isLoading={isLoading} />
-      <Header />
-
-      <CharacterCardList characters={characterList || []} />
+      {isSuccess && (
+        <CharacterCardList characters={characteres} title="List Characters" />
+      )}
     </Styled.Container>
   );
 };

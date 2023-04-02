@@ -5,6 +5,7 @@ const colors = {
   gray: '#DCDCDC',
   grayDark: '#3E3E3E',
   green: '#49A782',
+  steelBlue: '#4682B4',
 };
 
 const space = {
@@ -61,6 +62,7 @@ const lineHeights = {
 
 const borderRadius = {
   input: '40px',
+  picture: '50px',
   circle: '50%',
 };
 

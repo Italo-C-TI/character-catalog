@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const basesUrl = "https://rickandmortyapi.com/api";
+const basesUrl: string = "https://rickandmortyapi.com/api";
 
 const baseConfig = {
     baseURL: `${basesUrl}`,

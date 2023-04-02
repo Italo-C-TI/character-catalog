@@ -4,10 +4,9 @@ import { request } from 'api/request';
 import { CharacterList, CharacterListParams, CharacterListResponse } from './getCharacterList.types';
 
 export const getCharacterList: CharacterList = async (params?: CharacterListParams) => {
-    console.log(params)
     const response = await request<CharacterListResponse>({
         url: Endpoints.character.list,
-        method: HttpMethods.Get,
+        method: HttpMethods.GET,
         params: {
             ...params
         },

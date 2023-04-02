@@ -2,7 +2,7 @@ import { Character, CharacterFilterParams, PageParams, Pagination } from "models
 
 export type CharacterListResponse = {
     info: Pagination;
-    characters: Character[];
+    results: Character[];
 };
 
 export type CharacterListParams = Partial<CharacterFilterParams & PageParams>;

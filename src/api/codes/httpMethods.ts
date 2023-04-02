@@ -1,3 +1,3 @@
 export enum HttpMethods {
-    Get = 'GET',
+    GET = 'GET',
 }
