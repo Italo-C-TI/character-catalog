@@ -39,7 +39,7 @@ Ctrl C
 - [x] Deve ser possível visualizar os detalhes do personagem clicando nele
 - [x] Deve ser possível favoritar e desfavoritar personagens
 - [x] Deve ser possível visualizar os personagens favoritos
-- [ ] Deve ser possível aplicar filtros para receber personagens
+- [ ] Deve ser possível aplicar filtros para receber personagens (Em andamento)
 - [ ] Deve ser responsivo (Em andamento)
 
 ## RNFs (Regras não funcionais)
