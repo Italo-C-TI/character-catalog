@@ -1,31 +1,34 @@
 import React from "react";
-//import * as Styled from "./Pagination.styles";
-import { Pagination as PaginationParams } from "models";
+import * as Styled from "./Pagination.styles";
+import { PaginationParams } from "models";
 
-export const Pagination = ({ count, pages, next, prev }: PaginationParams) => {
+export const Pagination = ({
+  pages,
+  current,
+  update,
+  size,
+}: PaginationParams) => {
   return (
     <>
-      <nav aria-label="...">
-        <ul>
-          <li>
-            <a href="#">Previous</a>
-          </li>
-          <li>
-            <a href="#">1</a>
-          </li>
-          <li>
-            <a href="#">
-              2 <span>(current)</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">3</a>
-          </li>
-          <li>
-            <a href="#">Next</a>
-          </li>
-        </ul>
-      </nav>
+      <Styled.Pagination>
+        {current !== 1 && (
+          <Styled.Block
+            onClick={() => update!({ page: current! - 1, size: size! })}
+          >
+            {"<"}
+          </Styled.Block>
+        )}
+
+        <Styled.Block>{current}</Styled.Block>
+
+        {current !== pages && (
+          <Styled.Block
+            onClick={() => update!({ page: current! + 1, size: size! })}
+          >
+            {">"}
+          </Styled.Block>
+        )}
+      </Styled.Pagination>
     </>
   );
 };

@@ -14,3 +14,10 @@ export type PageParams = {
     page?: number;
     size?: number;
 };
+
+export type PaginationParams = {
+    current?: number;
+    pages?: number;
+    size?: number;
+    update?: (params: Required<PageParams>) => void;
+};

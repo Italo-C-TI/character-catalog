@@ -19,7 +19,7 @@ export const CharacterDetailModal = ({
         <Styled.Picture src={character.image} />
         <Styled.Strong>{character.name}</Styled.Strong>
         <Styled.Light>
-          Is alive?{" "}
+          Is alive or dead?{" "}
           <Styled.Emphasis>{character.status.toUpperCase()}</Styled.Emphasis>
         </Styled.Light>
 

@@ -24,7 +24,11 @@ export const Favorites = () => {
   return (
     <Styled.Container>
       {isSuccess && (
-        <CharacterCardList characters={characters || []} title="Favorites" />
+        <CharacterCardList
+          characters={characters || []}
+          title="Favorites"
+          showPagination={false}
+        />
       )}
     </Styled.Container>
   );
