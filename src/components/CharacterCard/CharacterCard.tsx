@@ -4,10 +4,10 @@ import { like, inactiveLike } from "assets/icons";
 import * as Styled from "./CharacterCard.styles";
 import {
   useDeleteCharacterLikeId,
-  useGetCharacterLikesIds,
+  useModal,
   usePostCharacterLikeId,
 } from "hooks";
-import { convertToIdArray } from "utils";
+import { CharacterDetailModal } from "components/CharacterDetailModal";
 
 export const CharacterCard = ({
   character,
@@ -18,6 +18,7 @@ export const CharacterCard = ({
 
   const { handleSubmitId } = usePostCharacterLikeId();
   const { handleDeleteLikeId } = useDeleteCharacterLikeId();
+  const { isOpen, showModal, hideModal } = useModal();
 
   const handleLike = (id: number) => {
     if (!isLiked) {
@@ -30,12 +31,26 @@ export const CharacterCard = ({
   };
 
   return (
-    <Styled.Column>
-      <Styled.Picture src={character.image} />
-      <Styled.Row>
-        <Styled.Name>{character.name}</Styled.Name>
-        <Styled.LikeIcon src={liked} onClick={() => handleLike(character.id)} />
-      </Styled.Row>
-    </Styled.Column>
+    <>
+      {isOpen && (
+        <CharacterDetailModal
+          character={character}
+          isLiked={isLiked}
+          hideModal={hideModal}
+          handleLike={handleLike}
+        />
+      )}
+
+      <Styled.Column>
+        <Styled.Picture src={character.image} onClick={showModal} />
+        <Styled.Row>
+          <Styled.Name onClick={showModal}>{character.name}</Styled.Name>
+          <Styled.LikeIcon
+            src={liked}
+            onClick={() => handleLike(character.id)}
+          />
+        </Styled.Row>
+      </Styled.Column>
+    </>
   );
 };

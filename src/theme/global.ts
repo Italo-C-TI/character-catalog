@@ -3,7 +3,7 @@ const colors = {
   black: '#1A1A1A',
   grayLight: '#F2F2F2',
   gray: '#DCDCDC',
-  grayDark: '#3E3E3E',
+  grayDark: '#808080',
   green: '#49A782',
   steelBlue: '#4682B4',
 };
@@ -63,6 +63,7 @@ const lineHeights = {
 const borderRadius = {
   input: '40px',
   picture: '50px',
+  modal: '20px',
   circle: '50%',
 };
 
@@ -76,6 +77,7 @@ const iconSize = {
 };
 
 const zIndex = {
+  icon: '5',
   header: '10',
   modal: '20',
 };

@@ -14,6 +14,13 @@ export const Header = () => {
     ? HeaderVariantsEnum.OPEN
     : HeaderVariantsEnum.DEFAULT;
 
+  const goToHome = () => {
+    navigate("/");
+  };
+  const goToFavorites = () => {
+    navigate("/favorites");
+  };
+
   return (
     <Styled.Header variant={variantHeader}>
       <Styled.IconsContainer>
@@ -22,13 +29,17 @@ export const Header = () => {
         </Styled.RowIconWithText>
 
         <Styled.RowIconWithText>
-          <Icon src={home} onClick={() => navigate("/")} />
-          <Styled.IconText variant={variantHeader}>Home</Styled.IconText>
+          <Icon src={home} onClick={goToHome} />
+          <Styled.IconText variant={variantHeader} onClick={goToHome}>
+            Home
+          </Styled.IconText>
         </Styled.RowIconWithText>
 
         <Styled.RowIconWithText>
-          <Icon src={inactiveLike} onClick={() => navigate("/favorites")} />
-          <Styled.IconText variant={variantHeader}>Likeds</Styled.IconText>
+          <Icon src={inactiveLike} onClick={goToFavorites} />
+          <Styled.IconText variant={variantHeader} onClick={goToFavorites}>
+            Likeds
+          </Styled.IconText>
         </Styled.RowIconWithText>
       </Styled.IconsContainer>
     </Styled.Header>

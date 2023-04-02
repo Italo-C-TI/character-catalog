@@ -35,13 +35,13 @@ export const Picture = styled.img`
 export const LikeIcon = styled(Icon)`
     position: absolute;
     right: 18px;
-    z-index: 2;
-
+    z-index: ${theme.zIndex.icon};
 `;
 
 export const Name = styled.p`
     margin-left: 10px;
     color: ${theme.colors.white};
+    cursor: pointer;
 `;
 
 export const Status = styled.span`
