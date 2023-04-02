@@ -5,12 +5,14 @@ import theme from 'theme';
 export const Container = styled.div`
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
 `;
 
 export const Row = styled.div`
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 
 `;
