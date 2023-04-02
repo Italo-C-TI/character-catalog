@@ -32,9 +32,6 @@ npm start
 Ctrl C
 ```
 
-```
-
-
 ## RFs (Requisitos funcionais)
 
 - [x] Deve ser possível Visualizar a lista de personagens
@@ -45,10 +42,6 @@ Ctrl C
 - [ ] Deve ser possível aplicar filtros para receber personagens
 - [ ] Deve ser responsivo (Em andamento)
 
-
 ## RNFs (Regras não funcionais)
 
 - [ ] Deve haver testes de integração e layout com Jest (Em andamento)
-
-
-
